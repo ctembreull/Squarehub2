@@ -1,0 +1,79 @@
+
+/* -------------------------------------------------------------------------- */
+/*                                 Theme                                      */
+/* -------------------------------------------------------------------------- */
+@import "bootstrap/scss/_functions";
+@import "theme/functions";
+
+@import "user-variables";
+@import 'theme/colors';
+@import "theme/variables";
+@import "theme/variables-dark";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+
+@import 'theme/maps';
+@import "bootstrap/scss/maps"; // ---new---
+
+@import "bootstrap/scss/mixins";
+@import "theme/mixins";
+
+@import 'theme/_utilities';
+@import "bootstrap/scss/utilities";
+
+/* Application */
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+@import "bootstrap/scss/root";
+@import 'theme/root';
+
+@import 'theme/theme';
+
+/* -------------------------------------------------------------------------- */
+/*                                 User                                       */
+/* -------------------------------------------------------------------------- */
+@import "user-variables";
+@import 'theme/colors';
+@import "theme/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+@import "simplebar/dist/simplebar.min";
+
+/* -------------------------------------------------------------------------- */
+/*                             Team Colors                                    */
+/* -------------------------------------------------------------------------- */
+@import "teams/teams";
+
+/* -------------------------------------------------------------------------- */
+/*                            Custom Styles                                   */
+/* -------------------------------------------------------------------------- */
+table.game-grid { width: 100%; }
+table.game-grid th { text-align: center; vertical-align: center; }
+table.game-grid th.away-team-display {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	letter-spacing: -13px;
+}
+table.game-grid td.game-cell { text-align: center; }
+table.game-grid th.hnum { width: 10%; }
+
+table.scores-grid { width: 100%; }
+table.scores-grid tr.scores-header th.scores-team { width: 55%; }
+table.scores-grid tr.scores-header th.scores-period { width: 9%; text-align: center; }
+table.scores-grid tr.scores-row td { text-align: center; }
+
+table.winners-grid { width: 100%; }
+table.winners-grid thead th { text-align: center; }
+table.winners-grid thead th.winners-period { width: 25%; }
+table.winners-grid thead th.winners-prize  { width: 15%; }
+table.winners-grid thead th.winners-team   { width: 15%; }
+table.winners-grid thead th.winners-winner { width: 30%; }
+table.winners-grid tbody th.winners-period,
+table.winners-grid tbody th.winners-winner { text-align: left; }
+table.winners-grid tbody td.winners-prize,
+table.winners-grid tbody td.winners-team   { text-align: center; }
+
+

@@ -1,0 +1,12 @@
+:root,
+[data-bs-theme=light] {
+	$lou-louisville-cardinals-cardinal-red: #ad0000;
+	$lou-louisville-cardinals-white: #ffffff;
+	$lou-louisville-cardinals-black: #000000;
+}
+
+.lou-louisville-cardinals-cardinal-red-and-white, .lou-louisville-cardinals {
+  background-color: #ad0000;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}

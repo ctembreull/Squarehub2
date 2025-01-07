@@ -1,0 +1,93 @@
+<html data-bs-theme="light" lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title><%= content_for(:title) || "Falcon Dashboard" %></title>
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileImage" content="../assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+
+		<script src="<%= asset_path 'config.js' %>"></script>
+		<script src="<%= asset_path 'simplebar.min.js' %>"></script>
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
+		<%= stylesheet_link_tag "select2.min" %>
+		<%= stylesheet_link_tag "select2-bootstrap-5-theme.min" %>
+		<%= stylesheet_link_tag "dataTables.bootstrap5.min" %>
+		<%= stylesheet_link_tag "prism-okaidia.min" %>
+		<%= stylesheet_link_tag "simplebar.min" %>
+
+    <%= javascript_importmap_tags %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <script>
+			var tz = JSON.parse(localStorage.getItem('user_time_zone'));
+    </script>
+  </head>
+
+  <body>
+		<main class="main" id="top">
+      <div class="container" data-layout="container">
+
+				<script>
+          var isFluid = JSON.parse(localStorage.getItem('isFluid'));
+          if (isFluid) {
+            var container = document.querySelector('[data-layout]');
+            container.classList.remove('container');
+            container.classList.add('container-fluid');
+          }
+        </script>
+
+				<%= render 'layouts/application_navigation' %>
+
+				<div class="content">
+					<%= yield %>
+
+					<%= render 'layouts/application_footer' %>
+				</div>
+
+			</div>
+		</main>
+
+		<!-- ==========================================================-->
+		<!--    Javascripts                                            -->
+		<!--    Just understand, I'm not trying to impress anyone here -->
+		<!-- ==========================================================-->
+		<script src="<%= asset_path 'popper.min.js' %>"></script>
+		<script src="<%= asset_path 'bootstrap.min.js' %>"></script>
+		<script src="<%= asset_path 'anchor.min.js' %>"></script>
+		<script src="<%= asset_path 'is.min.js' %>"></script>
+		<script src="<%= asset_path 'jquery.min.js' %>"></script>
+		<script src="<%= asset_path 'prism.js' %>"></script>
+		<script src="<%= asset_path 'select2.min.js' %>"></script>
+		<script src="<%= asset_path 'select2.full.min.js' %>"></script>
+		<script src="<%= asset_path 'dataTables.min.js' %>"></script>
+		<script src="<%= asset_path 'dataTables.bootstrap5.min.js' %>"></script>
+		<script src="<%= asset_path 'dataTables.fixedColumns.min.js' %>"></script>
+		<script src="<%= asset_path 'echarts.min.js' %>"></script>
+		<script src="<%= asset_path 'fontawesome-free.min.js' %>"></script>
+		<script src="<%= asset_path 'lodash.min.js' %>"></script>
+		<script src="<%= asset_path 'list.min.js' %>"></script>
+		<script src="<%= asset_path 'theme.js' %>"></script>
+
+	</body>
+</html>

@@ -1,0 +1,12 @@
+:root,
+[data-bs-theme=light] {
+	--uw-washington-huskies-purple: #4b2e83;
+	--uw-washington-huskies-gold: #e8e3d3;
+	--uw-washington-huskies-metallic-gold: #85754d;
+}
+
+.uw-washington-huskies-adidas-home, .uw-washington-huskies {
+  background-color: #4b2e83;
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #85754d, -1px 1px 0 #85754d, 1px -1px 0 #85754d, -1px -1px 0 #85754d;
+}
