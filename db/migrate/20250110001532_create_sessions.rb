@@ -4,7 +4,9 @@ class CreateSessions < ActiveRecord::Migration[8.0]
       t.references :user, null: false, foreign_key: true
       t.string  :ip_address
       t.string  :user_agent
-      t.integer :time_zone
+      t.string  :time_zone
+      t.integer :time_zone_offset
+      t.integer :time_zone_offset_with_dst
 
       t.timestamps
     end

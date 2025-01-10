@@ -1,11 +1,56 @@
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
 
-<%= form_with url: session_path do |form| %>
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
-  <%= form.submit "Sign in" %>
-<% end %>
-<br>
+<div class="row flex-center min-vh-10 py-6">
+	<div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
+		<%= link_to :demo, class: 'd-flex flex-center mb-4' do %>
+			<%= image_tag 'icons/spot-illustrations/falcon.png', width: 58, alt: '' %>
+			<span class="font-sans-serif text-primary fw-bolder fs-4 d-inline-block">
+				<%= content_for(:appname) || "squarehub" %>
+			</span>
+		<% end %>
 
-<%= link_to "Forgot password?", new_password_path %>
+		<div class="card">
+			<div class="card-body p-4 p-sm-5">
+
+				<!-- card title -->
+				<div class="row flex-between-center mb-2">
+					<div class="col-auto">
+						<h5>Log in</h5>
+					</div>
+				</div>
+
+				<!-- form -->
+				<%= form_with url: session_path do |form| %>
+					<div class="mb-3">
+						<%= form.email_field :email_address, required: true, autocomplete: "username", placeholder: "email address", class: 'form-control' %>
+					</div>
+					<div class="mb-3">
+						<%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "password", class: "form-control" %>
+					</div>
+					<div class="row flex-between-center">
+						<div class="col-auto"></div>
+						<div class="col-auto">
+							<%= link_to "Forgot password?", new_password_path, class: "fs-10" %>
+						</div>
+					</div>
+					<div class="mb-3">
+						<%= form.submit "Log in", class: "btn btn-primary d-block w-100 mt-3" %>
+					</div>
+				<% end %>
+				<div class="mb-3">
+					<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+					<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
